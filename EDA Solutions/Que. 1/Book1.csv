@@ -1,0 +1,23 @@
+Q3. Calculate the average length of stays for different hotel types and explore variations by meal plans.,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+Resort Hotel,SC,6.7907,,,SQL QUERY,,,,,,,,,,
+Resort Hotel,HB,5.573,,,"SELECT 
+    bd.hotel AS hotel_type, 
+    msd.meal AS meal_plan, 
+    AVG(bd.stays_in_weekend_nights + bd.stays_in_week_nights) AS avg_length_of_stay
+FROM booking_details bd
+JOIN meal_and_stay_details msd 
+    ON bd.booking_id = msd.booking_id
+GROUP BY bd.hotel, msd.meal
+ORDER BY avg_length_of_stay DESC;",,,,,,,,,,
+Resort Hotel,Undefined,4.2678,,,,,,,,,,,,,
+Resort Hotel,FB,4.0703,,,,,,,,,,,,,
+Resort Hotel,BB,3.9833,,,,,,,,,,,,,
+City Hotel,BB,3.0116,,,,,,,,,,,,,
+City Hotel,SC,2.9003,,,,,,,,,,,,,
+City Hotel,HB,2.7832,,,,,,,,,,,,,
+City Hotel,FB,2.7273,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
